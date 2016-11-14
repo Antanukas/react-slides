@@ -1,0 +1,10 @@
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+h2
+node_modules
+logs
+
+target
+*.iml
+.idea
