@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Git Pradmenys</title>
+		<title>ReactJs</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/white.css">
@@ -107,7 +107,7 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-                # React komponentai naudojant Javascript
+                #### React komponentai naudojant Javascript
 
                 ```
                 var HelloComponent = React.createClass({
@@ -131,6 +131,7 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
+                #### JSX pagalba
                 ```
                 <MyButton color="blue" shadowSize={2}>
                   Click Me
@@ -150,7 +151,7 @@
           </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              # Komponentas naudojant JSX
+              #### Komponentas naudojant JSX
 
                 ```
                 var HelloComponent = React.createClass({
@@ -169,7 +170,7 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              ## Piešimas
+              #### Piešimas (ReactDOM.render)
 
               index.html
               ```
@@ -190,7 +191,7 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              ## Komponentų kompozicija #1
+              #### Komponentų kompozicija #1
 
               ```
               var AvatarComponent = React.createClass({
@@ -208,7 +209,7 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              ## Komponentų kompozicija #2
+              #### Komponentų kompozicija #2
 
               ```
               var CommentComponent = React.createClass({
@@ -230,7 +231,7 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              ## Komponento atributai (props) #1
+              #### Komponento atributai (props) #1
 
               - `this.props` - komponentui perduoti atributai
                 - gali būti programuotojo sugalvoti
@@ -250,7 +251,7 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              ## Komponento atributai (props) #2
+              #### Komponento atributai (props) #2
 
               ```
               <ProductCardComponent
@@ -266,7 +267,7 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              ## Pastabos
+              #### Pastabos
 
               - JSX leidžia rašyti "html" tagus, bet kaikurie dalykai daromi kitaip.
               - Norint nurodyti CSS klasę vietoj atributo `class` rašome `className`
@@ -274,13 +275,44 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              ## Naujo komponento šablonas
+              #### Stiliai
+
+              - ReactJs priimta rašyti taip vadinamus `inline styles` naudojant `style` atributą
+              - Vietoj to, kad aprašyti stilius CSS faile jie yra rašomi Javascript'u
+              - Pagrindinė nauda - komponento stiliai įtakoja tik tą komponentą, kuriame jie aprašyti
+              - Ne viskas, kas įmanoma CSS'e yra įmanoma `inline styles`
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+              #### Stiliai - pavyzdys
+
+              ```
+              var styles = {
+                container: { background: 'red' },
+                greetingText: { color: 'green' }
+              };
+              var Component = React.createClass({
+                render: function() {
+                  return (
+                    <div style={styles.container}>
+                      <p style={styles.greetingText}>Tekstas yra tokas</p>
+                    </div>
+                  );
+                }
+              });
+              ```
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+              #### Naujo komponento šablonas
 
               ```
               var Component = React.createClass({
                 render: function() {
                   return (
-                    <div className="component">
+                    <div>
                       <!-- Component view -->
                     </div>
                   );
@@ -295,7 +327,7 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              ## Tėvinio komponento nupiešimas
+              #### Šakninio komponento nupiešimas
 
               ```
               ReactDOM.render(
@@ -303,11 +335,14 @@
                 document.getElementById('root')
               );
               ```
+
+              - Dažniausiai būna vienoje vietoje aplikacijoje
+              - Vaikiniai komponentai automatiškai išsipiešia
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              ## Užduotis 1 - pirmieji komponentai #1
+              #### Užduotis 1 - pirmieji komponentai #1
 
               - Užduočiai turėtų užtekti 2 failų sukūrimo - index.html ir app.js
               - Galite pasiimti bet kokį paveikslėlį iš interneto
@@ -317,7 +352,7 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              ## Užduotis 1 - pirmieji komponentai #2
+              #### Užduotis 1 - pirmieji komponentai #2
 
               - Sukurkite 2 komponentus:
                 - ProductCardComponent - mokantis piešti vieną produkto kortelę
@@ -329,7 +364,7 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              ## Užduotis 1 - trukstamos bibliotekos
+              #### Užduotis 1 - bibliotekos
               ```
               <link
                 rel="stylesheet"
@@ -350,7 +385,7 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
           <script type="text/template">
-            ## Komponento būsena
+            #### Komponento būsena
 
             - Kolkas komponentai neturėjo būsenos
             - Vienintelis būdas atnaujinti komponentą buvo jį perpiešti naudojant render() funkciją
@@ -359,7 +394,7 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
           <script type="text/template">
-            ## Komponento būsena
+            #### Komponento būsena
 
             - Būsena saugoma kintamajame `this.state`
             - Būsena atnaujinama kviečiant komponento funkciją `this.setState(newState)`
@@ -375,7 +410,7 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              ## Dažniausiai naudojami būsenos hook'ai
+              #### Dažniausiai naudojami būsenos hook'ai
 
               - getInitialState() - turi grąžinti objektą, kuris bus pradinė būsenos reikšmė
               - render() - turi grąžinti komponento html'ą
@@ -386,32 +421,16 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              ## Komponento šablonas
+              #### Paspaudimo įvykiai
 
-              ```
-              var Component = React.createClass({
-                getInitialState: function() {
-                  return { /* Some props */ }
-                },
-                componentWillMount: function() {
-                  // load data from server
-                  this.setState({ /* Some props loaded */ })
-                },
-                // Other lifecycle methods if needed
-                // Other methods for click handling and stuff
-                render: function() {
-                  return (<div className="component"><!-- Component view --></div>);
-                }
-              });
-              Component.propTypes = {
-                // Properties JSON
-              };
-              ```
+              - React'js attributas `onClick` leidžia įvykdyti funkciją įvykus paspaudimio įvykiui
+              - `onClick` attributas gali būti net tik ant mygtuko, bet ir ant bet kokio elemento.
+
             </script>
         </section>
-
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
+                #### Pavyzdys
                 ```
                 var IncreasingButtonComponent = React.createClass({
                   getInitialState: function() { return { count: 0 }; },
@@ -434,439 +453,281 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-                `$ git status` - dabartinė repositorijos būsena.
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-              ![gitstatus](gitstatus.png "Git Status")
+                #### Pavyzdys - paaiškinimas
 
-              Sucommitinti bus žalių failų pakeitimai
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-                `$ git commit -m <message>`
-
-                Komanda atliekama pabaigus darbą ar jo etapą su failais.
-                Susikuria changeset'as turintis informaciją apie pasikeitusius failus.
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-                `$ git log` - commit'ų istorija dabartinėje šakoje
-
-                ![gitlog](gitlog.png "Git Log")
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-                ![idomu](idomu.jpg "idomu")
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-                ## Užduotėlė
-
-                - susikurkite katalogą: `studentai`
-                - inicijuokite jame git repositoriją
-                - sukurkite failą `studentai.dat`
-                - atverkite failą ir irašykite į jį savo vardą ir pavardę
-                - sucommitinkite pakeitimus
-                - peržvelkite ar istorijoje atsirado commitas
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-                ## Užduotėlė - galimas sprendimas
-
-                ```
-                $ mkdir studentai
-                $ cd studentai
-                $ git init
-                $ echo "Jonas Petraitis" >> studentai.dat
-                $ git add studentai.dat
-                $ git commit -m "Added my name to studentai.dat"
-                $ git log
-                ```
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-                ## Šakos (branch)
-
-                - branch'as kuris sukuriamas pagal nutylėjimą - 'master'
-                - nauji branch'ai kuriami vartotojų
-                - branch'ai dažniausiai naudojami gaminant didesnį funkcionalumą norint perkelti jį į `master` branch'ą pilnai išbaigus
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-                ```
-                $ git checkout -b test
-                Switched to a new branch 'test'
-
-                $ git branch
-                  master
-                * test
-
-                $ git checkout master
-                Switched to branch 'master'
-
-                $ git branch
-                * master
-                  test
-                ```
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-                `$ git merge <branch-name>` - Atlikti merge commitą perkeliant nurodyto brancho pakeitimus į dabartinį
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-                ```
-                $ git branch
-                * master
-                  test
-                $ echo "master branch tekstas" >> file
-                $ git add .
-                $ git commit -m "Master commitas"
-                [master 2a5c8f1] Master commitas
-                 1 file changed, 1 insertion(+)
-                ```
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-                ```
-                $ git checkout -b naujas
-                Switched to a new branch 'naujas'
-                $ echo "naujas branch tekstas" >> file
-                $ git add .
-                $ git commit -m "Naujas commitas"
-                [naujas 52f1927] Naujas commitas
-                 1 file changed, 1 insertion(+)
-                $ git checkout master
-                Switched to branch 'master'
-                ```
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-                ```
-                $ cat file
-                master branch tekstas
-                $ git merge naujas
-                Updating 2a5c8f1..52f1927
-                Fast-forward
-                 file | 1 +
-                 1 file changed, 1 insertion(+)
-                $ cat file
-                master branch tekstas
-                naujas branch tekstas
-                ```
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-                ## Git istorijos narsymas
-
-                Dažnai labai patogu tai daryti grafiniais įrankiais
-
-                ```
-                $ sudo apt-get install gitg
-                $ gitg
-                ```
+                - getInitialState - paspaudimų skaičius bus saugomas būsenos `count` lauke. Pradžioje turime 0 paspaudimų.
+                - `&nbsp;` - taip html'e rašomas tarpas
+                - turime funkciją `handleClick`, kuri naudojant `setState` padidina `count` skaitliuką vientu
+                - `handleClick` funkcija yra pakviečiama paspaudus mygtuką. Tai padaroma naudojant specialų ReactJs `onClick` atributą
 
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-                ![cdsgitlog](cdsgitlog.png "Gitg")
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-                ## Git rodyklės (pointers)
+              #### Komponento šablonas
 
-                - `HEAD` - dabartinės būsenos rodyklė
-                - Gudresni atvejai http://www.paulboxley.com/blog/2011/06/git-caret-and-tilde
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-                ## Commito ID
-
-                - `52f192703d9951f5bbaa55fc41c0c78bba811a49`
-                - praktikoje unikaliai nusakyti pakanka 7 pirmų simbolių `52f1927`
-                - žinant commit'o id galima atlikti visokių veiksmų. Tarkime nukreiptį HEAD'ą į šį commit'ą
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
               ```
-              $ git checkout 52f1927
-
-              You are in 'detached HEAD' state. You can look around, make experimental
-              changes and commit them, and you can discard any commits you make in this
-              state without impacting any branches by performing another checkout.
-
-              If you want to create a new branch to retain commits you create, you may
-              do so (now or later) by using -b with the checkout command again. Example:
-
-                git checkout -b <new-branch-name>
-
-              HEAD is now at 52f1927... Naujas commitas
-
+              var Component = React.createClass({
+                getInitialState: function() {
+                  return { /* Some props */ }
+                },
+                componentWillMount: function() {
+                  // load data from server
+                  this.setState({ /* Some props loaded */ })
+                },
+                // Other lifecycle methods if needed
+                // Other methods for click handling and stuff
+                render: function() {
+                  return (<div><!-- Component view --></div>);
+                }
+              });
+              Component.propTypes = {
+                // Properties JSON
+              };
               ```
             </script>
         </section>
+
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              ## Merge konfliktai
+                #### Užduotis - susinaikinimo skaitliukas
 
-              - Įvyksta kai ta pati failo vieta buvo modifikuota kelių vartotojų
-              - Galimi `merge` ir `pull` komandų metu
-              - Ištaisius konfliktus failuose juos reikia add'inti ir sucommitin'ti nekeinčiant commit'o pranešimo
+                - Sukurkite komponentą SelfDestructTimerComponent
+                - Ant puslapio užkrovimo skaitliukas turėtų pradėti skaičiuoti nuo 42 sekundžių iki 0
+                - Pasiekus 0 komponento fonas turėtų paraudonuoti
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              ## Konflikto pavyzdys
+                #### Užduotis - užuominos
 
-              ```
-              Jonas Petraitis
-              <<<<<<< HEAD
-              1985-01-09
-              =======
-              Vilnius
-              >>>>>>> gimimo-vieta
-              ```
+                - `setInterval` - https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval
+                - `clearInterval` - https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval
+                - nepamirškite setInterval išvalyti
+                - `background` CSS atributas
+            </script>
+        </section>
 
-              - `<<<<<<<` ir `>>>>>>>` žymi pradžią ir pabaigą konfliktuojančios dalies
-              - `<<<<<<< HEAD` sako, jog konfliktuojantis blokas yra iš branch'o į kurį merginame
-              - `=======` atskiria dalis tarp branch'ų
-              - `>>>>>>> gimimo-vieta` sako, jog dalis tarp `=======` ir `>>>>>>>` yra iš branch'o gimimo-vieta
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+                #### React formos
+
+                - Formos react'e išsiskiria iš kitų elementų dėl to, kad kiekvienas laukas savyje turi būseną
+                - React'e būsena laikoma `state` lauke
+                - Tam, kad sinchronizuoti būseną tarp `state` ir formos elemento nauojamas `onChange` ir `value` atributai
+                - `onChange` priima funkciją, kurią pakviečia pasikeitus formos lauko reikšmei
+                - `value` atspindi formos reikšmę
+                - jei norime pakeisti formos lauko reikšmę iš javascripto turime keisti lauką kuris yra stebimas `value` išraiškos
+
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              ## Užduotėlė
+                #### React pavyzdys
 
-              - Įsitikinkite, kad esate `master` branch'e
-              - Sukurkite branch'ą pavadinimu `gimimo-data`
-              - Tame branch'e į failą studentai.dat naujoje eilutėje įrašykite savo gimimo datą
-              - Sucommitinkite
-              - Grįžkite į `master` branch'ą
+                ```
+                var NameForm = React.createClass({
+                  getInitialState: function() { return  { value: ''}; },
+                  handleChange: function(event) {
+                    this.setState({value: event.target.value});
+                  },
+                  handleSubmit: function(event) {
+                    this.setState({value: 'reset after submit'});
+                    event.preventDefault();
+                  },
+                  render: function() {
+                    return (
+                      <form onSubmit={this.handleSubmit}>
+                        Name:
+                        <input type="text" value={this.state.value} onChange={this.handleChange} />
+                        <input type="submit" value="Submit" />
+                      </form>
+                    );
+                  }
+                });
+                ```
+
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              ## Užduotėlė
+                #### React pavyzdys - paaiškinimas
 
-              - Sukurkite branch'ą `gimimo-vieta`
-              - Tame branch'e į failą studentai.dat naujoje eilutėje įrašykite savo gimimo vietą
-              - Sucommitinkite
-              - Grįžkite į `master` branch'ą
+                - kaskart vedant reikšmę yra kviečiama `handleChange` funkcija,
+                kuri naujai gautą reikšmę is `event` parametro perkelia į `state.value`
+                - paspaudus `Submit` nygtuką į console atspausdinama reikšmė ir pakeičiama į `'reset after submit'`
+                - `event.preventDefault()` reikalingas tam, kad nebūtų vykdomas standartinis formos submitas - siuntimas formos duomenų į serverį
+                - ateityje `handleSubmit` paskirtis būtų pakviesti serverį (REST Api) ir nusiųsti duomenis
+                ```
+
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              ## Užduotėlė
+                #### Užduotis - produkto sukūrimo forma
 
-              - Įmerginkite gimimo datos pakeitimus į master branch'ą
-              - Įmerginkite gimimo vietos pakeitimus į master branch'ą
+                - sukurkite ProductAdministrationComponent
+                - Produktą apibūdinantys laukai: title, imageUrl, description, price, quantity
+                - Mygtukas `Save`
+                - Paspaudus `Save` išspaudinkite visą produkto informaciją
+                - Naudokite Bootstrap'o formas: http://getbootstrap.com/css/#forms
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-                ## Užduotėlė - galimas sprendimas
+                #### Puslapio navigacija
 
-                ```
-                $ git checkout -b gimimo-data
-                Switched to a new branch 'gimimo-data'
-                ```
-                ```
-                $ echo "1985-01-03" >> studentai.dat
-                $ git add .
-                $ git commit -m "Gimimo data"
-                [gimimo-data 1da96ec] Gimimo data
-                 1 file changed, 1 insertion(+)
-                ```
-                ```
-                $ git checkout master
-                Switched to branch 'master'
-                ```
+                - kolkas visi mūsų komponentai buvo tame puslapyje
+                - normalu, kad puslapio naudotojai norėtų naviguoti spausdami mygtukus, linkus, paveikslėlius ir t.t.
+                - šiam funkcionalumui įgyvendinti bus naudojama React Router biblioteka
+                - https://github.com/reacttraining/react-router
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-                ## Užduotėlė - galimas sprendimas
 
                 ```
-                $ git checkout -b gimimo-vieta
-                Switched to a new branch 'gimimo-vieta'
+                <!--
+                <script src="https://unpkg.com/react-router@2.8.1/umd/ReactRouter.js"></script>
+                -->
                 ```
-                ```
-                $ echo "Vilnius" >> studentai.dat
-                $ git add .
-                $ git commit -m "Gimimo vieta"
-                [gimimo-vieta a309462] Gimimo vieta
-                 1 file changed, 1 insertion(+)
-                ```
-                ```
-                $ git checkout master
-                Switched to branch 'master'
-                ```
+            </script>
+        </section>
+
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+              #### Komponentai
+
+              - Navigacijos konfigūracijos: Router, Route, IndexRoute
+              - Navigacijos: Link
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-                ## Užduotėlė - galimas sprendimas
-
+                Įeities taškas - app komponentas
                 ```
-                $ git merge gimimo-data
-                Updating f9f86f9..1da96ec
-                Fast-forward
-                 studentai.dat | 1 +
-                 1 file changed, 1 insertion(+)
+                var App = function(props) {
+                  return <div>{props.children}</div>;
+                };
                 ```
+                Komponentas, kurį rodysime neegzituojančiam keliui
                 ```
-                $ git merge gimimo-vieta
-                Auto-merging studentai.dat
-                CONFLICT (content): Merge conflict in studentai.dat
-                Automatic merge failed; fix conflicts and then commit the result.
-                ```
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-                ## Užduotėlė - galimas sprendimas
-
-                ```
-                $ gedit studentai.dat # pataisome konfliktus faile
-                ```
-
-                ```
-                Jonas Petraitis
-                <<<<<<< HEAD
-                1985-01-03
-                =======
-                Vilnius
-                >>>>>>> gimimo-vieta
-                ```
-
-                ```
-                Jonas Petraitis
-                1985-01-03
-                Vilnius
-                ```
-                ```
-                $ git add .
-                $ git commit
-                [master 5c8fae3] Merge branch 'gimimo-vieta'
+                var NoMatch = function(props) {
+                  return <div>Route did not match</div>;
+                };
                 ```
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-                ## Decentralizacija
-
-                - Kiekviena gito repositorija yra kopija kažkurio laiko momento.
-                - Ji gali nepriklausomai vystitis
-                - Praktikoje dažniausiai yra Git Serveris, kuris yra centrinė repositorija (origin)
-                - Populiariausi serveriai: https://github.com, https://gitlab.com, https://bitbucket.org
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-              ## Remote repositorijos
-
-              - Praktikoje būna viena centrinė remote repositorija vadinama 'origin'
-              - Kuriant naują git projektą ją reikia prisidėti pačiam (`git remote add`)
-              - Klonuojantis (`git clone`) egzistuojantį projektą ji pridedama automatiškai
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-              `$ git remote add <name> <repository>`
-
-              ```
-              $ git remote add origin git@github.com:Antanukas/it-akademija-java-tech.git
-              $ git remote -v
-               origin  git@github.com:Antanukas/it-akademija-java-tech.git (fetch)
-               origin  git@github.com:Antanukas/it-akademija-java-tech.git (push)
-              ```
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-              `$ git clone <repository>`
-
-              ```
-              $ git clone git@github.com:Antanukas/it-akademija-java-tech.git
-              ```
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-                `remote` ar `clone` repositoriumo radimas
-
-                ![cloneexample](cloneexample.png "Clone example")
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-              ## Lokalios repo sinchronizacija
-
-              `$ git pull` arba `$ git fetch`
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-              ## pull vs fetch
-
-              - fetch - atsisiunčia pakeitimus iš repositorijos, bet nepritaiko jų lokaliai kopijai
-              - pull - padaro ta pati ką fetch, bet pritiako gautus pakeitimos, ko pasekoje gali reikėti mergo
-                - techniskai git pull atveju vyksta tokia seka jei esame master'yje:
+                Prisikiriam kintamiesiems, kad nereikėtų dubliuoti
                 ```
-                $ git fetch
-                $ git merge remotes/origin/master
+                var Router = window.ReactRouter.Router;
+                var Route = window.ReactRouter.Route;
+                var IndexRoute = window.ReactRouter.IndexRoute;
+                var hashHistory = window.ReactRouter.hashHistory;
                 ```
-              - praktikoje visada darome `git pull` ir nesipariname
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              ## Lokalių pakeitimų išstumimas į remote'ą
-
-              `$ git push origin <branch-name>`
-
-              - jei remote'as pabėgęs į priekį bus atspausdinta klaida
-                - tokiu atveju reikia atlikti `git pull`, ispręsti merge konfliktus ir bandyti vėl
+                Įeities taškas - app komponentas
+                ```
+                var App = function(props) {
+                  return <div>{props.children}</div>;
+                };
+                ```
+                Komponentas, kurį rodysime neegzituojančiam keliui
+                ```
+                var NoMatch = function(props) {
+                  return <div>Route did not match</div>;
+                };
+                ```
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              ## Užduotis
+                Šis komponentas skirtas pademonstruoti navigaciją
+                ```
+                var SomePageComponent = function(props) {
+                  var goRoot = function(e) {
+                    props.router.push("/");
 
-              - Susikurkite Githubo accounta
-              - Susikurkite Gihtube repositoriją
-              - Prisidėkite remotą
-              - Papushinkite į remotą
+                  }
+                  return (
+                    <div>
+                      At route: {props.router.getCurrentLocation().pathname}
+                      <button onClick={goRoot}>Go to Root route</button>
+                      <pre>
+                        {JSON.stringify(props, null, 2)}
+                      </pre>
+                    </div>
+                  );
+                };
+                ```
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              ## Pasimokyti patiems
+                ```
+                ReactDOM.render((
+                  <Router history={hashHistory}>
+                    <Route path="/" component={App}>
+                      <IndexRoute component={SomePageComponent} />
+                      <Route path="/products" component={SomePageComponent} />
+                      <Route path="/products/:id" component={SomePageComponent} />
+                      <Route path="/help" component={SomePageComponent} />
+                      <Route path="*" component={NoMatch}/>
+                    </Route>
+                  </Router>
+                ), document.getElementById('root'));
+                ```
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+                #### Router'io konfigūracijos šablonas
 
-              - https://git-scm.com/book/en/v2
-                - Pirmi 2 skyriai is a MUST
-                - 3 skyrius smalsiems
-                - visa knyga rimtiems
-              - http://learngitbranching.js.org/
+                ```
+                var App = function(props) {
+                  return <div>{props.children}</div>;
+                };
+                var NoMatch = function(props) {
+                  return <div>Route did not match</div>;
+                };
+                var Router = window.ReactRouter.Router;
+                var Route = window.ReactRouter.Route;
+                var IndexRoute = window.ReactRouter.IndexRoute;
+                ReactDOM.render((
+                  <Router history={window.ReactRouter.hashHistory}>
+                    <Route path="/" component={App}>
+                      <!-- Router configuration -->
+                    </Route>
+                  </Router>
+                ), document.getElementById('root'));
+                ```
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+                #### Užduotėlė - navigacija #1
+
+                - Naudokite prieš tai užduotyje sukurtus komponentus
+                  - ProductListComponent ir ProductAdministrationComponent
+                - sudėkite į tris puslapius:
+                  - / ir /products turi rodyti produktų sąrašą (ProductListComponent)
+                  - /admin/products/new - ProductAdministrationComponent
+                  - /admin/products/:id - ProductAdministrationComponent
+
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+                #### Užduotėlė - navigacija #2
+
+                - papildykite ProductAdministrationComponent, kad jis rodytų priklausomai nuo kelio puslapio antraštę:
+                  - Kuriamas naujas produktas, jei url `/admin/products/new`
+                  - Atnaujinamas producktas 'id', jei url `/admin/products/:id`
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
