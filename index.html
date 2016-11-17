@@ -490,7 +490,7 @@
 
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-                #### Užduotis - susinaikinimo skaitliukas
+                #### Užduotis 2 - susinaikinimo skaitliukas
 
                 - Sukurkite komponentą SelfDestructTimerComponent
                 - Ant puslapio užkrovimo skaitliukas turėtų pradėti skaičiuoti nuo 42 sekundžių iki 0
@@ -499,7 +499,7 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-                #### Užduotis - užuominos
+                #### Užduotis 2 - užuominos
 
                 - `setInterval` - https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval
                 - `clearInterval` - https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval
@@ -564,13 +564,28 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-                #### Užduotis - produkto sukūrimo forma
+                #### Užduotis 3 - produkto sukūrimo forma
 
                 - sukurkite ProductAdministrationComponent
                 - Produktą apibūdinantys laukai: title, imageUrl, description, price, quantity
                 - Mygtukas `Save`
                 - Paspaudus `Save` išspaudinkite visą produkto informaciją
                 - Naudokite Bootstrap'o formas: http://getbootstrap.com/css/#forms
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+              #### Komponentai be būsenos
+
+              - Stateless Functional Components
+              - Komponentai, kurie turi tik render funkciją
+              - Užrašomi trumpiau, kaip paprastos JS funkcijos:
+
+              ```
+              var Component = function(props) {
+                return <div>{props.prop1}</div>
+              }
+              ```
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
@@ -588,7 +603,7 @@
 
                 ```
                 <!--
-                <script src="https://unpkg.com/react-router@2.8.1/umd/ReactRouter.js"></script>
+                <script src="https://unpkg.com/react-router@3.0.0/umd/ReactRouter.js"></script>
                 -->
                 ```
             </script>
@@ -710,7 +725,7 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-                #### Užduotėlė - navigacija #1
+                #### Užduotis 4 - navigacija #1
 
                 - Naudokite prieš tai užduotyje sukurtus komponentus
                   - ProductListComponent ir ProductAdministrationComponent
@@ -723,11 +738,185 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-                #### Užduotėlė - navigacija #2
+                #### Užduotis 4 - navigacija #2
 
                 - papildykite ProductAdministrationComponent, kad jis rodytų priklausomai nuo kelio puslapio antraštę:
                   - Kuriamas naujas produktas, jei url `/admin/products/new`
                   - Atnaujinamas producktas 'id', jei url `/admin/products/:id`
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+                #### Komponentų paskirtis
+
+                - praktikoje priimta turėti 2 tipų komponentus
+                  - Presentation (vaizdavimo)
+                  - Container (būsenos)
+                - React'o požiūriu tai yra tiesiog React'o komponentai
+                - Visalaik eina porom: ProductListComponent ir ProductListContainer
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+                #### Presentation komponentai
+
+                - turi tik `render()` funkciją
+                - yra Stateless Functional Component todėl gali būti apibrėžti kaip funkcija
+                - atsakingi tik už piešimą
+                - visa piešimui reikalinga informacija yra perduodama per `props`
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+                #### Container komponentai
+
+                - turi `render()` funkciją kuri piešia Presentation componentą ir nieko daugiau
+                - atsakingas surinkti duomenis, registruoti `click` funkcijas ir valdyti būseną
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+                #### Presentation komponento pavyzdys
+
+                ```
+                var SomeComponent = function(props) {
+                  return (
+                    <div>
+                      <!-- A lot of html -->
+                    </div>
+                  );
+                };
+
+                SomeComponent.propTypes = {
+                  prop1: React.PropTypes.string.isRequired
+                };
+                ```
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+                #### Container komponento pavyzdys
+
+                ```
+                var SomeContainer = React.createClass({
+                  getInitialState: function() {},
+                  componentWillMount: function() {},
+                  //Other functions
+                  render: function() {
+                    return <SomeComponent prop1={this.state.prop1} />
+                  }
+                });
+
+                ```
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+              #### Darbas su serveriu
+
+              - Naudosime Axios (https://github.com/mzabriskie/axios)
+              - Sužinosime, kas yra Promise'as
+              - Pamatysime asinchroninį kodo vykdymą
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+              #### Pavyzdinis API
+
+              - Duomenis krausime iš https://itakademija.herokuapp.com/swagger-ui.html#/
+              - Tarkime šiuo metu parduodamų produktų sąrašas yra čia:
+                https://itakademija.herokuapp.com/api/products
+              - Kaip tai pakrauti į mūsų React'o appsą?
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+              - Įmetam script'ą - https://unpkg.com/axios/dist/axios.min.js
+
+              ```
+              axios.get('https://itakademija.herokuapp.com/api/products')
+                .then(function (response) {
+                  console.log(response);
+                })
+                .catch(function (error) {
+                  console.log(error);
+                });
+              ```
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+              - `axios.get('URL')` grąžina Promise tipo objektą
+              - Promise objektas yra kaip pažadas, kad kažkas į jo vidų kažkada įdės reikšmę
+              - `then(fn)` ir `catch(fn)` yra Promise objekto funkcijos priimančios funkcijas (callback'us)
+                kurios bus įvykdytos, kai kas nors į promise'ą įdės rezultatą
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+              - `then(fn)` - fn yra pakviečiamas, kai serveris grąžina sėkmingą rezultatą (HTTP 200 OK)
+              - `catch(fn)` - fn yra pakviečiamas, kai serveris grąžina nesėkmingą rezultatą (HTTP >400)
+              - serverio kvietimas vyksta asinchroniskai - kodas vykdomas toliau, nors serveris dar neatsakė
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+              #### `then(fn)`
+              - callback funkcijai yra perduodamas `response` objektas
+              - https://github.com/mzabriskie/axios#response-schema
+              - data - serverio resultato JSON'as
+              - status - serverio vykdymo kodas. 200 reiškia sėkmingą vykdymą.
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+              - Kiekvienas HTTP method turi atitinkamą funkciją Axios bibliotekoje
+              - axios.get, axios.post, axios.delete, axios.put
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+              #### Integracija su React'u
+              Dažniausiai serveris kviečiamas kai:
+              - užkraunamas komponentas ir jį reikia užpildyti duomenimis
+              - įvyksta vartotojo veiksmas (formos išsaugojimas) ir reikia nusiųsti serveriui duomenis
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+              #### Užkraunant pradinį komponento vaizdą
+              ```
+              componentWillMount: function() {
+                var self = this;
+                axios.get('https://itakademija.herokuapp.com/api/products')
+                  .then(function (response) {
+                    // self, because this in this context refers
+                    // to callback function and not to component
+                    self.setState({ product: response.data });
+                  })
+                },
+              },
+              ```
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+              #### Užduotis 5 - rodykite produktų sąrašą iš serverio
+
+              - Sukurkite ProductListContainer, kuris atsakingas už būsenos valdymą
+              - ProductListContainer container turi pakviesti serverį ir išpiešti ProductListComponent
+              perduodamas jam produktų sąrašą
+              - Pakeiskite ProductListComponent taip, kad jis rodytu produktų sąrašą iš
+              https://itakademija.herokuapp.com/api/products
+              - Paveikslėliai nesimatys šiuo atveju.
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+              #### Užduotis 6 - išsaugokite naują produktą serveryje
+
+              - ProductAdministrationComponent iškelkite būseną į ProductAdministrationContainer komponentą
+              - Spaudžiant mygtuką `Save` padarykite POST https://itakademija.herokuapp.com/api/products
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
