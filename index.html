@@ -43,7 +43,7 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-                ## Paprastas Hello World
+                ## Paprastas 'Hello World' pavyzdys
 
                 ```
                 <html>
@@ -61,7 +61,7 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-                ## Itraukiame stilius ir js
+                ## Įtraukiame stilius ir js
 
                 ```
                 <html>
@@ -236,7 +236,7 @@
               - `this.props` - komponentui perduoti atributai
                 - gali būti programuotojo sugalvoti
                 - React'o persiunčiami pagal nutylėjimą (props.children)
-              - Papildoami kiekvienas komponentas gali nusakyti kokių atributų tikisi
+              - Papildomai kiekvienas komponentas gali nusakyti kokių atributų tikisi
 
               ```
               ProductCardComponent.propTypes = {
@@ -269,18 +269,18 @@
             <script type="text/template">
               #### Pastabos
 
-              - JSX leidžia rašyti "html" tagus, bet kaikurie dalykai daromi kitaip.
-              - Norint nurodyti CSS klasę vietoj atributo `class` rašome `className`
+              - JSX leidžia rašyti "html" tag'us, bet kai kurie dalykai daromi kitaip.
+                - Norint nurodyti CSS klasę, vietoj atributo `class` rašome `className`
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
               #### Stiliai
 
-              - ReactJs priimta rašyti taip vadinamus `inline styles` naudojant `style` atributą
-              - Vietoj to, kad aprašyti stilius CSS faile jie yra rašomi Javascript'u
+              - ReactJs priimta rašyti taip vadinamus `inline styles`, naudojant `style` atributą
+              - Vietoj to, kad aprašytume stilius CSS faile, jie yra rašomi Javascript'u
               - Pagrindinė nauda - komponento stiliai įtakoja tik tą komponentą, kuriame jie aprašyti
-              - Ne viskas, kas įmanoma CSS'e yra įmanoma `inline styles`
+              - Ne viskas, kas įmanoma CSS'e, yra įmanoma `inline styles`
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
@@ -337,7 +337,7 @@
               ```
 
               - Dažniausiai būna vienoje vietoje aplikacijoje
-              - Vaikiniai komponentai automatiškai išsipiešia
+              - Vaikiniai komponentai automatiškai nusipiešia
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
@@ -346,7 +346,7 @@
 
               - Užduočiai turėtų užtekti 2 failų sukūrimo - index.html ir app.js
               - Galite pasiimti bet kokį paveikslėlį iš interneto
-              - Norint nurodyti CSS klasę vietoj atributo `class` rašome `className`
+              - Norint nurodyti CSS klasę, vietoj atributo `class` rašome `className`
               - Sukurkite statinį produktų sąrašo vaizdą
             </script>
         </section>
@@ -359,7 +359,7 @@
                 - ProductListComponent - mokantis piešti daug produktų kortelių
               - Vienas produktas sąraše: paveikslėlis, pavadinimas, kaina, mygtukas į detales
               - Užpildykite vaizdą testiniais duomenimis
-              - Kortelėm galite naudoti http://getbootstrap.com/components/#thumbnails
+              - Kortelėms galite naudoti http://getbootstrap.com/components/#thumbnails
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
@@ -387,8 +387,8 @@
           <script type="text/template">
             #### Komponento būsena
 
-            - Kolkas komponentai neturėjo būsenos
-            - Vienintelis būdas atnaujinti komponentą buvo jį perpiešti naudojant render() funkciją
+            - Iki šiol komponentai neturėjo būsenos
+            - Vienintelis būdas atnaujinti komponentą, buvo jį perpiešti naudojant render() funkciją
           </script>
 
         </section>
@@ -410,20 +410,20 @@
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
-              #### Dažniausiai naudojami būsenos hook'ai
+              #### Dažniausiai naudojamos būsenos funkcijos
 
               - getInitialState() - turi grąžinti objektą, kuris bus pradinė būsenos reikšmė
               - render() - turi grąžinti komponento html'ą
               - componentWillMount/componentWillUnmount
-                - dažniausiai skirtas sukurti/atšaukti globalius dalykus kaip timer'is
-                - pakviesti serverį užkraunant duomenis is perduodant juos `setState`
+                - dažniausiai skirtas sukurti/atšaukti globalius objektus, pvz `setInterval` ar `clearInterval`
+                - pakviesti serverį užkraunant duomenis ir perduodant juos `setState`
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
             <script type="text/template">
               #### Paspaudimo įvykiai
 
-              - React'js attributas `onClick` leidžia įvykdyti funkciją įvykus paspaudimio įvykiui
+              - React'js attributas `onClick` leidžia įvykdyti funkciją paspaudus mygtuką
               - `onClick` attributas gali būti net tik ant mygtuko, bet ir ant bet kokio elemento.
 
             </script>
@@ -493,8 +493,8 @@
                 #### Užduotis 2 - susinaikinimo skaitliukas
 
                 - Sukurkite komponentą SelfDestructTimerComponent
-                - Ant puslapio užkrovimo skaitliukas turėtų pradėti skaičiuoti nuo 42 sekundžių iki 0
-                - Pasiekus 0 komponento fonas turėtų paraudonuoti
+                - Atidarius puslapį, skaitliukas turėtų pradėti skaičiuoti nuo 42 sekundžių iki 0
+                - Pasiekus 0, komponento fonas turėtų paraudonuoti
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
@@ -503,7 +503,7 @@
 
                 - `setInterval` - https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval
                 - `clearInterval` - https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval
-                - nepamirškite setInterval išvalyti
+                - nepamirškite išvalyti setInterval
                 - `background` CSS atributas
             </script>
         </section>
@@ -514,10 +514,10 @@
 
                 - Formos react'e išsiskiria iš kitų elementų dėl to, kad kiekvienas laukas savyje turi būseną
                 - React'e būsena laikoma `state` lauke
-                - Tam, kad sinchronizuoti būseną tarp `state` ir formos elemento nauojamas `onChange` ir `value` atributai
+                - Formos elemento atributai `onChange` ir `value` naudojami sinchronizuoti elemeto būseną su `state` lauku
                 - `onChange` priima funkciją, kurią pakviečia pasikeitus formos lauko reikšmei
                 - `value` atspindi formos reikšmę
-                - jei norime pakeisti formos lauko reikšmę iš javascripto turime keisti lauką kuris yra stebimas `value` išraiškos
+                - jei norime pakeisti formos lauko reikšmę iš javascripto, turime keisti lauką, kurį yra stebi `value` išraiška
 
             </script>
         </section>
@@ -917,6 +917,75 @@
 
               - ProductAdministrationComponent iškelkite būseną į ProductAdministrationContainer komponentą
               - Spaudžiant mygtuką `Save` padarykite POST https://itakademija.herokuapp.com/api/products
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+              #### Kodo struktūra
+
+              ```
+              .
+              ├── index.html
+              ├── js
+              │   ├── components
+              │   │   ├── product_administration_component.js
+              │   │   ├── product_card_component.js
+              │   ├── containers
+              │   │   ├── product_administration_container.js
+              │   │   └── product_list_container.js
+              │   ├── index.js
+              │   ├── navigation_component.js
+
+              ```
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+              #### Kodo struktūra - tasyklės
+
+              - Iškelkite komponentus į atskirus failus
+              - index.js aprašykite React Router taisykles
+              - navigation_component.js aprašykite navigacijos meniu
+              - failo pavadinimas turi sutapti su komponento pavadinimu
+              - priskirkite komponentus `window` objektui
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+              #### Užduotis 7 - pertvarkykite kodą
+
+              - Atskirkite komponentus į atskirus failus
+              - sukurkite components ir containers katalogus
+              - index.js aprašykite React Router taisykles
+              - kad galima būtų įtraukti failus iš subkatalogų reikia atjungti Firefox security
+              https://www.thepolyglotdeveloper.com/2014/08/bypass-cors-errors-testing-apis-locally/
+
+              ```
+              security.fileuri.strict_origin_policy=false
+              ```
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+              #### Užduotis 8 - užbaikite el. parduotuvę
+
+              - https://itakademija.herokuapp.com
+              - pabandykite patys sukurti tai, ko truksta
+              - pasibaigus idėjoms naršykite
+              https://github.com/Antanukas/it-akademija-java-tech/tree/master/src/main/resources/static
+
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+              #### Savarankiškam pasimokymui
+
+              - https://online.reacttraining.com/p/reactjsfundamentals - nemokamas kursas.
+                Labai naudingas ir pakankamas norint gaminti šiek tiek rimtesnį frontendą
+              - https://facebook.github.io/react/
+              - užduotėlių sprendimai: https://github.com/Antanukas/react-slides-exercises
+              - https://antanukas.github.io/react-slides
+              - https://github.com/Antanukas/it-akademija-java-tech
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
