@@ -592,7 +592,7 @@
             <script type="text/template">
                 #### Puslapio navigacija
 
-                - kolkas visi mūsų komponentai buvo tame puslapyje
+                - kolkas visi mūsų komponentai buvo viename puslapyje
                 - normalu, kad puslapio naudotojai norėtų naviguoti spausdami mygtukus, linkus, paveikslėlius ir t.t.
                 - šiam funkcionalumui įgyvendinti bus naudojama React Router biblioteka
                 - https://github.com/reacttraining/react-router
@@ -637,26 +637,10 @@
             <script type="text/template">
                 Prisikiriam kintamiesiems, kad nereikėtų dubliuoti
                 ```
-                var Router = window.ReactRouter.Router;
-                var Route = window.ReactRouter.Route;
-                var IndexRoute = window.ReactRouter.IndexRoute;
-                var hashHistory = window.ReactRouter.hashHistory;
-                ```
-            </script>
-        </section>
-        <section data-markdown data-background-image="sbg.png">
-            <script type="text/template">
-                Įeities taškas - app komponentas
-                ```
-                var App = function(props) {
-                  return <div>{props.children}</div>;
-                };
-                ```
-                Komponentas, kurį rodysime neegzituojančiam keliui
-                ```
-                var NoMatch = function(props) {
-                  return <div>Route did not match</div>;
-                };
+                var Router = ReactRouter.Router;
+                var Route = ReactRouter.Route;
+                var IndexRoute = ReactRouter.IndexRoute;
+                var hashHistory = ReactRouter.hashHistory;
                 ```
             </script>
         </section>
@@ -697,6 +681,18 @@
                   </Router>
                 ), document.getElementById('root'));
                 ```
+            </script>
+        </section>
+        <section data-markdown data-background-image="sbg.png">
+            <script type="text/template">
+               #### Paaiškinimas
+
+               - Router'io konfigūracija prasideda eilute `<Router history={hashHistory}>`
+               - `path` pasako koks kelias url'e atitiks kokį komponentą
+                 - Tarkime, kai url'e bus #/products bus piešiamas SomePageComponent
+               - `path` atributas gali būti šablonas
+               - /products/:id atitiks visus kelius tokius kaip `products/1`, `products/new`
+               - `:id` reikšmė bus patalpinta `props.params.id` kintamajame.
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
@@ -749,7 +745,7 @@
             <script type="text/template">
                 #### Komponentų paskirtis
 
-                - praktikoje priimta turėti 2 tipų komponentus
+                - Dažniausia priimta turėti 2 tipų komponentus
                   - Presentation (vaizdavimo)
                   - Container (būsenos)
                 - React'o požiūriu tai yra tiesiog React'o komponentai
@@ -856,7 +852,7 @@
             <script type="text/template">
               - `then(fn)` - fn yra pakviečiamas, kai serveris grąžina sėkmingą rezultatą (HTTP 200 OK)
               - `catch(fn)` - fn yra pakviečiamas, kai serveris grąžina nesėkmingą rezultatą (HTTP >400)
-              - serverio kvietimas vyksta asinchroniskai - kodas vykdomas toliau, nors serveris dar neatsakė
+              - serverio kvietimas vyksta asinchroniskas - kodas vykdomas toliau, nors serveris dar neatsakė
             </script>
         </section>
         <section data-markdown data-background-image="sbg.png">
@@ -890,7 +886,7 @@
                 var self = this;
                 axios.get('https://itakademija.herokuapp.com/api/products')
                   .then(function (response) {
-                    // self, because this in this context refers
+                    // self, because `this` in this context refers
                     // to callback function and not to component
                     self.setState({ product: response.data });
                   })
